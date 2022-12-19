@@ -18,6 +18,7 @@ class Category(models.Model):
 
 
 class Movie(models.Model):
+    image = models.ImageField(upload_to='images', null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     video = models.FileField(upload_to='videos', null=True, verbose_name="")
     title = models.CharField(max_length=300, null=True)
